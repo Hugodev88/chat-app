@@ -15,6 +15,7 @@ const LoginPage = () => {
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
 		login(formData)
+
 	}
 
 	return (
