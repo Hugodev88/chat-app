@@ -12,7 +12,8 @@ interface AuthState {
 	logout: () => Promise<void>;
 	signup: (formData: { fullName: string; email: string; password: string }) => void;
 	login: (formData: { email: string, password: string }) => void
-	updateProfile: (formData: { profilePic: string }) => void
+	updateProfile: (formData: { profilePic: string }) => void;
+	onlineUsers: any
 }
 
 export const useAuthStore = create<AuthState>((set) => ({
@@ -21,6 +22,7 @@ export const useAuthStore = create<AuthState>((set) => ({
 	isLoggingIn: false,
 	isUpdatingProfile: false,
 	isCheckingAuth: true,
+	onlineUsers: [],
 
 	checkAuth: async () => {
 		try {
